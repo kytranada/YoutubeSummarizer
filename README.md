@@ -34,7 +34,7 @@ YouTube Transcript Summarizer is a Flask web application that summarizes YouTube
 
 3. **Set up environment variables:**
 
-   Open the `.env` file in the root directory of the project and add your OpenAI API key
+   Create and open the `.env` file in the root directory of the project and add your OpenAI API key
 
    ```plaintext
    OPENAI_API_KEY=your_openai_api_key_here
