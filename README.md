@@ -4,7 +4,9 @@ YouTube Transcript Summarizer is a Flask web application that summarizes YouTube
 
 ## Photos
 [![Screen-Shot-2024-06-02-at-12-38-21-PM.png](https://i.postimg.cc/bwzLh34v/Screen-Shot-2024-06-02-at-12-38-21-PM.png)](https://postimg.cc/w7GD5cqK)
+
 [![Screen-Shot-2024-06-02-at-1-16-06-PM.png](https://i.postimg.cc/Y9ptfcPH/Screen-Shot-2024-06-02-at-1-16-06-PM.png)](https://postimg.cc/bGBXp58C)
+
 ## Features
 
 - Extracts transcripts from YouTube videos.
