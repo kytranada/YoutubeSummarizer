@@ -3,7 +3,8 @@
 YouTube Transcript Summarizer is a Flask web application that summarizes YouTube video transcripts using the OpenAI API. Users can input a YouTube URL, and the app retrieves the video's transcript and generates a concise summary with key points and keywords.
 
 ## Photos
-
+[![Screen-Shot-2024-06-02-at-12-38-21-PM.png](https://i.postimg.cc/bwzLh34v/Screen-Shot-2024-06-02-at-12-38-21-PM.png)](https://postimg.cc/w7GD5cqK)
+[![Screen-Shot-2024-06-02-at-1-16-06-PM.png](https://i.postimg.cc/Y9ptfcPH/Screen-Shot-2024-06-02-at-1-16-06-PM.png)](https://postimg.cc/bGBXp58C)
 ## Features
 
 - Extracts transcripts from YouTube videos.
