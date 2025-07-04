@@ -59,6 +59,7 @@ button:hover,
 .button:hover {
   background-color: #6fbce9;
 }
+
 .summary {
   white-space: pre-wrap;
   background: #1e1e1e;
@@ -67,4 +68,39 @@ button:hover,
   margin-top: 20px;
   box-shadow: 0px 0px 10px 0px #333;
   color: #e0e0e0;
+}
+
+/* Flash Messages */
+.flash-messages {
+  margin-bottom: 20px;
+}
+
+.flash-message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.flash-message.error {
+  background-color: #4a1c1c;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+.flash-message.success {
+  background-color: #1c4a1c;
+  color: #6bff6b;
+  border: 1px solid #6bff6b;
+}
+
+/* Error Page */
+.error-message {
+  background: #4a1c1c;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px 0;
+  border: 1px solid #ff6b6b;
+  color: #ff6b6b;
+  text-align: center;
 }
