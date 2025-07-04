@@ -4,18 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Error - YouTube Video Summarizer</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   </head>
   <body>
-    <div class="container">
-      <h1>Error</h1>
-      <div class="error-message">
-        <p>{{ error }}</p>
-      </div>
-      <a href="{{ url_for('index') }}" class="button">Go Back</a>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-brain"></i>
+            <h1>YouTube Summarizer</h1>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="container">
+          <div class="error-message">
+            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+            <h2>Oops! Something went wrong</h2>
+            <p>{{ error }}</p>
+          </div>
+          
+          <div class="navigation-actions">
+            <a href="{{ url_for('index') }}" class="btn-secondary">
+              <i class="fas fa-home"></i>
+              Go Back Home
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2024 YouTube Summarizer. Powered by AI.</p>
+      </footer>
     </div>
   </body>
 </html> 

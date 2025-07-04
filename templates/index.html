@@ -3,38 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YouTube Video Summarizer</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles.css') }}"
-    />
+    <title>YouTube Video Summarizer - AI-Powered Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
   </head>
   <body>
-    <div class="container">
-      <h1>YouTube Video Summarizer</h1>
-      
-      <!-- Flash Messages -->
-      {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-          <div class="flash-messages">
-            {% for category, message in messages %}
-              <div class="flash-message {{ category }}">
-                {{ message }}
-              </div>
-            {% endfor %}
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-brain"></i>
+            <h1>YouTube Summarizer</h1>
           </div>
-        {% endif %}
-      {% endwith %}
-      
-      <form action="{{ url_for('summarize') }}" method="post">
-        <input
-          type="text"
-          name="youtube_url"
-          placeholder="Enter YouTube URL (e.g., https://www.youtube.com/watch?v=VIDEO_ID)"
-          required
-        />
-        <button type="submit">Summarize</button>
-      </form>
+          <p class="tagline">Transform long videos into concise insights with AI</p>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="container">
+          <!-- Flash Messages -->
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <div class="flash-messages">
+                {% for category, message in messages %}
+                  <div class="flash-message {{ category }}">
+                    <i class="fas fa-{{ 'exclamation-triangle' if category == 'error' else 'check-circle' }}"></i>
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
+          
+          <!-- Input Form -->
+          <div class="input-section">
+            <form action="{{ url_for('summarize') }}" method="post" class="summarize-form">
+              <div class="input-group">
+                <div class="input-wrapper">
+                  <i class="fas fa-link input-icon"></i>
+                  <input
+                    type="text"
+                    name="youtube_url"
+                    placeholder="Paste YouTube URL here..."
+                    required
+                    class="url-input"
+                  />
+                </div>
+                <button type="submit" class="summarize-btn">
+                  <i class="fas fa-magic"></i>
+                  <span>Summarize</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Features Section -->
+          <div class="features-section">
+            <h2>How it works</h2>
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-link"></i>
+                </div>
+                <h3>1. Paste URL</h3>
+                <p>Simply paste any YouTube video URL</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h3>2. AI Processing</h3>
+                <p>Our AI extracts and analyzes the transcript</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>3. Get Summary</h3>
+                <p>Receive a comprehensive summary with key insights</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>&copy; 2024 YouTube Summarizer. Powered by AI.</p>
+      </footer>
     </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+      <div class="loading-content">
+        <div class="spinner"></div>
+        <h3>Processing your video...</h3>
+        <p>This may take a few moments</p>
+      </div>
+    </div>
+
+    <script>
+      // Show loading overlay when form is submitted
+      document.querySelector('.summarize-form').addEventListener('submit', function() {
+        document.getElementById('loadingOverlay').style.display = 'flex';
+      });
+    </script>
   </body>
 </html>
